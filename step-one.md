@@ -233,7 +233,7 @@ If everything works, the console should display:
 
 ```sh
 Connected to DB
-Data was initialized
+DB was initialized
 ```
 
 ---
