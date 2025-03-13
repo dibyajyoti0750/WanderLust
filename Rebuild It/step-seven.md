@@ -264,11 +264,11 @@ Now, when multiple fields are missing, Joi will return a single error message li
 
 ## **Summary**
 
-1. Created an `error.ejs` page to display Bootstrap alerts.
-2. Modified the global error-handling middleware.
-3. Initially used manual `if-else` validation but found it inefficient.
-4. Installed and configured Joi for schema validation.
-5. Created a validation schema in `schema.js`.
-6. Used Joi for validation in routes.
-7. Converted validation into a reusable middleware.
-8. Improved error messages using Joi’s `error.details`.
+**1. Created an `error.ejs` page to display Bootstrap alerts.**
+**2. Modified the global error-handling middleware.**
+**3. Initially used manual `if-else` validation but found it inefficient.**
+**4. Installed and configured Joi for schema validation.**
+**5. Created a validation schema in `schema.js`.**
+**6. Used Joi for validation in routes.**
+**7. Converted validation into a reusable middleware.**
+**8. Improved error messages using Joi’s `error.details`.**
