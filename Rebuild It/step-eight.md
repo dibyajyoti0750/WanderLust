@@ -2,9 +2,9 @@
 
 - We have introduced a `Review` model that will store three key pieces of information:
 
-  1. `comment` (Text for the review)
-  2. `rating` (A number between 1 to 5)
-  3. `createdAt` (Date of creation, stored but not used yet)
+  - `comment` (Text for the review)
+  - `rating` (A number between 1 to 5)
+  - `createdAt` (Date of creation, stored but not used yet)
 
 - The `createdAt` field is stored in the database but will not be used immediately. It will be utilized later when we work with dates.
 
@@ -192,7 +192,7 @@ db.reviews.find()
 
 ---
 
-## **Conclusion**
+## **Summary**
 
 ### **What We Have Implemented So Far**
 
@@ -205,6 +205,7 @@ db.reviews.find()
 ### **What We Will Do Next**
 
 ⟶ Implement **validation** to prevent empty reviews.
+
 ⟶ Display stored reviews on the listing page.
 
 ---
