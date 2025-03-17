@@ -53,6 +53,7 @@ We only need to store `originalUrl` if the user is not already logged in. The be
 
 ```javascript
 module.exports.isLoggedIn = (req, res, next) => {
+  console.log(req.path, "..", req.originalUrl);
   if (!req.isAuthenticated()) {
     req.session.redirectUrl = req.originalUrl;
     ...
