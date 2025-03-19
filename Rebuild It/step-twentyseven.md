@@ -29,7 +29,7 @@ Next, we update the input field for the image. Instead of using a `text` input f
 ```html
 <div class="mb-3">
   <label for="image" class="form-label">Upload Listing Image</label>
-  <input name="listing[image]" type="file" class="form-control" />
+  <input name="listing[image]" type="file" class="form-control" required />
 </div>
 ```
 
