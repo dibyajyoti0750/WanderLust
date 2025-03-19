@@ -1,6 +1,6 @@
-## **Geocoding**
+# **Geocoding**
 
-### **Objective**
+## **Objective**
 
 We aim to implement a small functionality where, whenever we add a new listing and enter a location, geocoding will convert the location into geographical coordinates (latitude and longitude) and print them. Once we achieve this, we will display these coordinates on a map.
 
