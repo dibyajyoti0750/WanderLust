@@ -11,7 +11,7 @@ Before deploying, we need to make a small change in our `package.json` file by s
   "engines": {
     "node": "22.14.0"
   }
-}
+},
 ```
 
 If we do not specify the Node.js version, **Render** may throw errors during deployment.
