@@ -185,6 +185,16 @@ You can add multiple filters in the same format:
   <div><i class="fa-regular fa-snowflake"></i></div>
   <p>Arctic</p>
 </div>
+
+<div class="filter">
+  <div><i class="fa-solid fa-igloo"></i></div>
+  <p>Domes</p>
+</div>
+
+<div class="filter">
+  <div><i class="fa-solid fa-ship"></i></div>
+  <p>Boats</p>
+</div>
 ```
 
 #### **Reducing Font Size of Filter Labels**
