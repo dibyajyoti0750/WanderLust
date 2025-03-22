@@ -200,12 +200,12 @@ Your database and listings collection should be created, and the sample listing 
   cd init
   ```
 - Run the script:
+
   ```sh
   node index.js
   ```
 
-**Check Sample Data Initialization Log**  
-If everything works, the console should display:
+- If everything works, the console should display:
 
 ```sh
 Connected to DB
