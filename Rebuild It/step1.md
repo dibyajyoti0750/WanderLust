@@ -196,9 +196,11 @@ Your database and listings collection should be created, and the sample listing 
 ### 4. Run the Initialization Script
 
 - Navigate to the `init` folder:
+
   ```sh
   cd init
   ```
+
 - Run the script:
 
   ```sh
@@ -213,6 +215,7 @@ Your database and listings collection should be created, and the sample listing 
   ```
 
 - After execution, return to the main project folder:
+
   ```sh
   cd ..
   ```
