@@ -67,7 +67,7 @@
     <button>Create New Listing</button>
   </form>
   ```
-- Define New Route in `app.js`:
+- Define New Route above Show Route in `app.js`:
   ```js
   app.get("/listings/new", (req, res) => {
     res.render("listings/new.ejs");
