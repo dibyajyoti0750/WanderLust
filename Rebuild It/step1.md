@@ -207,10 +207,10 @@ Your database and listings collection should be created, and the sample listing 
 
 - If everything works, the console should display:
 
-```sh
-Connected to DB
-DB was initialized
-```
+  ```sh
+  Connected to DB
+  DB was initialized
+  ```
 
 - After execution, return to the main project folder:
   ```sh
