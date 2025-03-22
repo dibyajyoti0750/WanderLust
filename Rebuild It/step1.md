@@ -161,7 +161,7 @@ Your database and listings collection should be created, and the sample listing 
 ### 2. Set Up the Initialization Files
 
 - Create an `init` folder inside `MajorProject/`
-- Paste the `data.js` file into `init/data.js`
+- Paste the `data.js` file into `MajorProject/init/`
 - Create a new file inside `init/` named `index.js`
 
 ### 3. Write Initialization Logic in `index.js`
@@ -203,6 +203,15 @@ Your database and listings collection should be created, and the sample listing 
   ```sh
   node index.js
   ```
+
+**Check Sample Data Initialization Log**  
+If everything works, the console should display:
+
+```sh
+Connected to DB
+DB was initialized
+```
+
 - After execution, return to the main project folder:
   ```sh
   cd ..
@@ -210,13 +219,7 @@ Your database and listings collection should be created, and the sample listing 
 
 ---
 
-## Next Steps: CRUD Operations
-
-Now that the sample data is initialized, the next step is to set up the **index route** to display all listings.
-
----
-
-### 3. Testing & Verification
+### 5. Testing & Verification
 
 **Verify MongoDB Connection**
 
@@ -228,12 +231,10 @@ db.listings.find()
 
 If the data is inserted successfully, you should see multiple listings in the database.
 
-**Check Sample Data Initialization Log**  
-If everything works, the console should display:
+---
 
-```sh
-Connected to DB
-DB was initialized
-```
+## Next Steps: CRUD Operations
+
+Now that the sample data is initialized, the next step is to set up the **index route** to display all listings.
 
 ---
