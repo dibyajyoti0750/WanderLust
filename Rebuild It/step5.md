@@ -46,7 +46,7 @@ Bootstrap provides **custom form validation styles** that override the default b
 Add the `novalidate` attribute to the `<form>` tag:
 
 ```html
-<form method="post" action="/listings" novalidate></form>
+<form method="post" action="/listings" novalidate>...</form>
 ```
 
 #### **Step 2: Enable Bootstrap Validation**
@@ -54,12 +54,9 @@ Add the `novalidate` attribute to the `<form>` tag:
 Bootstrap requires adding a `needs-validation` class to the form:
 
 ```html
-<form
-  method="post"
-  action="/listings"
-  novalidate
-  class="needs-validation"
-></form>
+<form method="post" action="/listings" novalidate class="needs-validation">
+  ...
+</form>
 ```
 
 #### **Step 3: Add Custom JavaScript for Bootstrap Validation**
@@ -189,7 +186,7 @@ Then,
 Even though client-side validation prevents incorrect data from being entered through the frontend, **it is not enough** because:
 
 1. **Users can bypass client-side validation** using tools like Postman or Hoppscotch.
-2. **Direct API requests can still send incorrect data** to `/listings` using methods like POST, GET, or PUT.
+2. **Direct API requests can still send incorrect data** to `/listings` using methods like POST, PATCH, or PUT.
 
 ### **Solution: Implement Server-Side Validation**
 
