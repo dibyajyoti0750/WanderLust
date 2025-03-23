@@ -67,7 +67,7 @@ const sessionOptions = {
 };
 
 app.get("/", (req, res) => {
-  res.redirect("https://wanderlust-hucj.onrender.com/listings");
+  res.redirect("/listings");
 });
 
 app.use(session(sessionOptions));
