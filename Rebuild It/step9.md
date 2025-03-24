@@ -54,7 +54,8 @@ We add client-side validation inside **`show.ejs`** to prevent users from submit
 
 ## **Server-Side Validation**
 
-Even with client-side validation, a user can bypass it using tools like **Hoppscotch/Postman** to send invalid requests.  
+Even with client-side validation, a user can bypass it using tools like **Hoppscotch/Postman** to send invalid requests.
+
 To prevent this, we implement **server-side validation** using `Joi`.
 
 ### **1. Creating a Joi Schema**
@@ -62,8 +63,6 @@ To prevent this, we implement **server-side validation** using `Joi`.
 Define the schema inside **`schema.js`**:
 
 ```js
-const Joi = require("joi");
-
 module.exports.reviewSchema = Joi.object({
   review: Joi.object({
     rating: Joi.number().required().min(1).max(5),
