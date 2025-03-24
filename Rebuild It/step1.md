@@ -161,7 +161,7 @@ Your database and listings collection should be created, and the sample listing 
 ### 2. Set Up the Initialization Files
 
 - Create an `init` folder inside `MajorProject/`
-- Paste the `data.js` file into `MajorProject/init/`
+- Paste the `data.js` file into `init/`
 - Create a new file inside `init/` named `index.js`
 
 ### 3. Write Initialization Logic in `index.js`
@@ -198,7 +198,7 @@ Your database and listings collection should be created, and the sample listing 
 - Navigate to the `init` folder:
 
   ```sh
-  cd init
+  cd init/
   ```
 
 - Run the script:

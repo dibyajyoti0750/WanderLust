@@ -6,30 +6,27 @@ We transformed the individual listings on the index page into **Bootstrap cards*
 
 We replaced the existing listing structure with Bootstrap cards:
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
-  <h3>All listings</h3>
-  <!-- <form method="get" action="/listings/new">
-    <button>Create New Listing</button>
-  </form> -->
-  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-    <% for(let listing of allListings) { %>
-    <div class="card col">
-      <img
-        src="<%= listing.image %>"
-        class="card-img-top"
-        style="height: 20rem"
-        alt="listing_image"
-      />
-      <div class="card-body">
-        <p class="card-text">
-          <b><%= listing.title %></b> <br />
-          &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
-        </p>
-      </div>
+<h3>All listings</h3>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <% for(let listing of allListings) { %>
+  <div class="card col">
+    <img
+      src="<%= listing.image %>"
+      class="card-img-top"
+      style="height: 20rem"
+      alt="listing_image"
+    />
+    <div class="card-body">
+      <p class="card-text">
+        <b><%= listing.title %></b> <br />
+        &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+      </p>
     </div>
-    <% } %>
   </div>
+  <% } %>
+</div>
 ```
 
 ### **Adding Custom Styling in `styles.css`**
@@ -83,27 +80,27 @@ body {
 
 To ensure users can **click on a card to visit its show page**, we wrapped each card inside an `<a>` tag:
 
-```ejs
+```html
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-    <% for(let listing of allListings) { %>
-    <a href="/listings/<%= listing._id %>" class="listing-link">
-      <div class="card col">
-        <img
-          src="<%= listing.image %>"
-          class="card-img-top"
-          style="height: 20rem"
-          alt="listing_image"
-        />
-        <div class="card-img-overlay"></div>
-        <div class="card-body">
-          <p class="card-text">
-            <b><%= listing.title %></b> <br />
-            &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
-          </p>
-        </div>
+  <% for(let listing of allListings) { %>
+  <a href="/listings/<%= listing._id %>" class="listing-link">
+    <div class="card col">
+      <img
+        src="<%= listing.image %>"
+        class="card-img-top"
+        style="height: 20rem"
+        alt="listing_image"
+      />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text">
+          <b><%= listing.title %></b> <br />
+          &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+        </p>
       </div>
-    </a>
-    <% } %>
+    </div>
+  </a>
+  <% } %>
 </div>
 ```
 
@@ -138,7 +135,7 @@ We redesigned the **form for adding a new listing**.
 
 ### **Updating `new.ejs`**
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
 <div class="row mt-3">
   <div class="col-8 offset-2">
@@ -238,7 +235,7 @@ We applied the same styling changes to the **edit listing page**.
 
 ### **Updating `edit.ejs`**
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
 <div class="row mt-3">
   <div class="col-8 offset-2">
@@ -321,7 +318,7 @@ We designed the **show page** to display listing details.
 
 ### **Updating `show.ejs`**
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
 <div class="row mt-3">
   <div class="col-8 offset-3">
@@ -376,3 +373,5 @@ We designed the **show page** to display listing details.
 ```
 
 ---
+
+### **Project Setup Completed**

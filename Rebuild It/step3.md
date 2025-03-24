@@ -36,7 +36,7 @@ This tells EJS that the current page should use the `boilerplate.ejs` layout.
 
 #### **Boilerplate Structure (`boilerplate.ejs`)**
 
-```ejs
+```html
 <title>WanderLust</title>
   </head>
   <body>
@@ -53,7 +53,7 @@ Here, `<%- body %>` acts as a **placeholder** where the content of different pag
 
 We remove unnecessary HTML and use:
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
 <h3>All listings</h3>
 <form method="get" action="/listings/new">
@@ -70,22 +70,22 @@ Visiting the index page now shows the **common layout** with specific content fo
 
 #### **Example: `show.ejs`**
 
-```ejs
+```html
 <% layout("/layouts/boilerplate") %>
-  <h3>Listing Details</h3>
-  <ul>
-    <li><%= listing.title %></li>
-    <li><%= listing.description %></li>
-    <li>&#8377;<%= listing.price.toLocaleString("en-IN") %></li>
-    <li><%= listing.location %></li>
-    <li><%= listing.country %></li>
-  </ul>
-  <br />
-  <a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
-  <br /><br />
-  <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
-    <button>Delete this listing</button>
-  </form>
+<h3>Listing Details</h3>
+<ul>
+  <li><%= listing.title %></li>
+  <li><%= listing.description %></li>
+  <li>&#8377;<%= listing.price.toLocaleString("en-IN") %></li>
+  <li><%= listing.location %></li>
+  <li><%= listing.country %></li>
+</ul>
+<br />
+<a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
+<br /><br />
+<form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
+  <button>Delete this listing</button>
+</form>
 ```
 
 This ensures every page follows the **same structure without repeating code**.
@@ -108,7 +108,7 @@ body {
 
 Now, instead of adding styles to every page separately, we include them in `boilerplate.ejs`:
 
-```ejs
+```html
 <link rel="stylesheet" href="/css/styles.css" />
 ```
 
@@ -120,8 +120,11 @@ This applies styles across all pages.
 
 Inside `boilerplate.ejs`, we add Bootstrap CSS and JS:
 
-```ejs
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+```html
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 ```
 
@@ -131,11 +134,16 @@ Inside `boilerplate.ejs`, we add Bootstrap CSS and JS:
 
 We create an `includes` folder inside `views` and add `navbar.ejs`:
 
-```ejs
+```html
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -161,17 +169,25 @@ Now, the navbar appears on every page.
 
 We add FontAwesome for icons:
 
-```ejs
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+```html
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
 ```
 
 Then, update `navbar.ejs`:
 
-```ejs
+```html
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="far fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -185,9 +201,9 @@ Then, update `navbar.ejs`:
 </nav>
 ```
 
-Since we already have **"Create New Listing"** in the navbar, we comment out the button in `index.ejs`:
+Since we already have **"Add New Listing"** in the navbar, we comment out the button in `index.ejs`:
 
-```ejs
+```html
 <!-- <form action="/listings/new" method="get">
 <button>Create New Listing</button>
 </form> -->
@@ -216,7 +232,7 @@ Since we already have **"Create New Listing"** in the navbar, we comment out the
 
 We create `footer.ejs` inside `includes`:
 
-```ejs
+```html
 <footer>
   <div class="f-info">
     <div class="f-info-socials">

@@ -166,7 +166,3 @@
     res.redirect("/listings");
   });
   ```
-
----
-
-### **Project Setup Completed**
