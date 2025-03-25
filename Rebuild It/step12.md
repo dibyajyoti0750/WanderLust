@@ -171,7 +171,7 @@ Cut the `validateReview` middleware function from `app.js` and paste it inside `
 
 ### **Step 7: Remove Unused Imports from `app.js`**
 
-After moving routes, `app.js` will highlight some unused imports (faded in VS Code). Remove them:
+After moving routes, `app.js` will highlight some unused imports. Remove them:
 
 ```js
 // const Listing = require("./models/listing.js");  ❌ Remove
@@ -179,8 +179,6 @@ After moving routes, `app.js` will highlight some unused imports (faded in VS Co
 // const { listingSchema, reviewSchema } = require("./schema.js"); ❌ Remove
 // const Review = require("./models/review.js"); ❌ Remove
 ```
-
-Similarly, in `review.js`, remove `listingSchema` since it’s not needed:
 
 ---
 
