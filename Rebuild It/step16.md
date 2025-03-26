@@ -9,15 +9,6 @@
 
 ---
 
-### **Implementing Signup Functionality**
-
-We are implementing functionalities to allow users to sign up. When a user signs up, we will create two routes:
-
-1. **GET /signup**: This will return a signup form.
-2. **POST /signup**: Once the form is submitted, this request will register the new user in the database.
-
----
-
 ### **Step 1: Creating `user.js` in the `routes` directory**
 
 We need to create a separate route file for user authentication:
