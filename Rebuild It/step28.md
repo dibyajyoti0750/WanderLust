@@ -7,11 +7,12 @@ Previously, we stored uploaded files in a local directory (`uploads/`). Now, we 
 To integrate **Multer** with **Cloudinary**, install the following NPM packages:
 
 ```sh
-npm install cloudinary multer-storage-cloudinary
+npm install cloudinary
+npm install multer-storage-cloudinary --legacy-peer-deps
 ```
 
 - **cloudinary** → Provides Cloudinary API integration.
-- **multer-storage-cloudinary** → Acts as a storage engine for Multer to upload files to Cloudinary.
+- **multer-storage-cloudinary** → Acts as a storage engine for Multer to upload files to Cloudinary. --legacy-peer-deps will skip peer dependency conflicts.
 
 #### **2. Setting Up Cloudinary Configuration**
 
