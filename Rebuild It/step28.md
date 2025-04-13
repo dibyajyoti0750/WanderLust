@@ -56,7 +56,7 @@ router
   });
 ```
 
-### **4. Upload Workflow**
+#### **4. Upload Workflow**
 
 1. **User uploads** an image file through the form.
 2. **Multer** middleware parses the `multipart/form-data` and extracts the file (in memory).
