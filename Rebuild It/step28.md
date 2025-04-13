@@ -36,14 +36,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 const cloudinary = require("../cloudConfig.js");
 
-router
-  .route("/")
-  .get(wrapAsync(wallpaperController.index))
-  // .post(
-  //   isLoggedIn,
-  //   validateWallpaper,
-  //   wrapAsync(wallpaperController.uploadWallpaper)
-  // );
+
   .post(upload.single("listing[image]"), async (req, res) => {
     const file = req.file;
     const b64 = Buffer.from(file.buffer).toString("base64");
