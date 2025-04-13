@@ -69,10 +69,6 @@ To parse this new format, we need a special middleware. This is where **Multer**
 
 Multer is an npm package that helps us handle `multipart/form-data`, which is required for processing file uploads.
 
-#### **Installing Multer**
-
-Run the following command in the terminal:
-
 ```sh
 npm i multer
 ```
@@ -143,12 +139,6 @@ If we check our project directory, we’ll see that an `uploads/` folder was **a
 
 Now that we have enabled file uploads and are storing images in local storage, the next step will be to **store these images in a cloud storage service instead of local storage**.
 
-This will allow:
-
-- Easy access to images from anywhere.
-- Better scalability and security.
-- No risk of losing images when deploying to a cloud server.
-
 ---
 
 ## **Cloud Setup: Cloudinary & .env File**
@@ -162,7 +152,6 @@ In this step, we set up our cloud storage using **Cloudinary**, a third-party se
   - API Key
   - API Secret
   - Other necessary credentials
-- These credentials will be required in our project.
 
 #### **2. Storing Credentials Securely in .env File**
 
@@ -211,14 +200,10 @@ if (process.env.NODE_ENV != "production") {
 
 #### **5. Storing Cloudinary Credentials in .env**
 
-Now, store Cloudinary credentials in `.env`:
-
 ```
-CLOUD_NAME=cloud_name
-CLOUD_API_KEY=api_key
-CLOUD_API_SECRET=api_secret
+CLOUD_NAME=your_cloud_name
+CLOUD_API_KEY=your_api_key
+CLOUD_API_SECRET=your_api_secret
 ```
 
 These credentials will be used when integrating Cloudinary in the project.
-
-For now, the `.env` file is set up, and we won't need to access it frequently.
