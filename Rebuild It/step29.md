@@ -42,7 +42,7 @@ router
   );
 ```
 
-Here, we use the `upload.single("listing[image]")` middleware to handle image uploads.
+Here, `upload.single("listing[image]")` runs **before** `validateListing`, ensuring that the image is properly handled before validation.
 
 ---
 
@@ -83,29 +83,6 @@ With this change, every new listing will now include an image object containing 
 
 - The `url` where the image is stored.
 - The `filename` of the uploaded image.
-
----
-
-### **Fixing Joi Validation Errors**
-
-After implementing this, if we try to create a new listing, we might get an error saying:
-
-```
-"listing" is required
-```
-
-This is likely caused by **Joi validation**. To fix this temporarily, we modify our middleware ordering:
-
-```js
-.post(
-    isLoggedIn,
-    upload.single("listing[image]"),
-    validateListing,
-    wrapAsync(listingController.createListing)
-);
-```
-
-Now, `upload.single("listing[image]")` runs **before** `validateListing`, ensuring that the image is properly handled before validation.
 
 ---
 
