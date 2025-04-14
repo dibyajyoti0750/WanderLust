@@ -8,23 +8,23 @@ When editing a listing, the current setup only allows updating the listing detai
 
 #### **2. Updating the Edit Form (`edit.ejs`)**
 
-First, we need to update our `edit.ejs` file to allow file uploads.
+Add `enctype="multipart/form-data"` to the `<form>` tag to allow file uploads:
 
-- Add `enctype="multipart/form-data"` to the `<form>` tag:
+```sh
+enctype="multipart/form-data"
+>
+```
 
-  ```sh
-  enctype="multipart/form-data"
-  >
-  ```
+Modify the form to include a file input for a new image upload:
 
-- Modify the form to include a file input for a new image upload:
-  ```html
-  <div class="mb-3">
-    <label for="image" class="form-label">Upload New Image</label>
-    <input name="listing[image]" type="file" class="form-control" />
-  </div>
-  ```
-  This allows users to upload a new image when editing a listing.
+```html
+<div class="mb-3">
+  <label for="image" class="form-label">Upload New Image</label>
+  <input name="listing[image]" type="file" class="form-control" />
+</div>
+```
+
+This allows users to upload a new image when editing a listing.
 
 ---
 
@@ -44,64 +44,67 @@ Now that the form can send files, we need to modify our `PUT` route to handle th
   )
   ```
 
-  This ensures that when updating a listing, a new image (if uploaded) is processed correctly.
-
 ---
 
 #### **4. Updating the Controller (`controllers/listings.js`)**
 
 Now, we modify the `updateListing` function to handle the new image:
 
-1. **Find and update the listing**:
+```js
+module.exports.updateListing = async (req, res) => {
+  const { id } = req.params;
 
-   ```js
-   module.exports.updateListing = async (req, res) => {
-       let { id } = req.params;
-       let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
-   ```
+  const listing = await Listing.findById(id);
 
-   Here, we retrieve the listing from the database and update it with the new details (except the image, which we'll handle separately).
+  // Update fields from form
+  Object.assign(listing, req.body.listing);
 
-2. **Check if a new image was uploaded**:
+  // If a new image was uploaded
+  if (req.file) {
+    // Delete old image from Cloudinary
+    if (listing.image && listing.image.filename) {
+      await cloudinary.uploader.destroy(listing.image.filename);
+    }
 
-   ```js
-   if (req.file) {
-     let url = req.file.path;
-     let filename = req.file.filename;
-     listing.image = { url, filename };
-     await listing.save();
-   }
-   ```
+    // Convert buffer to base64 and upload new image
+    const file = req.file;
+    const b64 = Buffer.from(file.buffer).toString("base64");
+    const dataURI = `data:${file.mimetype};base64,${b64}`;
 
-   - If a new image is uploaded, we replace the old one with the new one and save the listing.
+    const result = await cloudinary.uploader.upload(dataURI, {
+      folder: "wanderlust_DEV",
+    });
+
+    listing.image = {
+      url: result.secure_url,
+      filename: result.public_id,
+    };
+  }
+
+  await listing.save();
+
+  req.flash("success", "Listing Updated!");
+  res.redirect(`/listings/${id}`);
+};
+```
 
 ---
 
-#### **5. Handling Edge Cases**
+Sure! Here's the completed and accurate summary including what we’ve just done:
 
-What if a user does **not** upload a new image?
+---
 
-- If no new image is uploaded, `req.file` will be `undefined`, and attempting to access `req.file.path` will cause an error.
-- We prevent this by checking if `req.file` exists before trying to update the image.
-
-  Alternative approach using `typeof`:
-
-  ```js
-  if (typeof req.file !== "undefined") {
-    let url = req.file.path;
-    let filename = req.file.filename;
-    listing.image = { url, filename };
-    await listing.save();
-  }
-  ```
-
-  This ensures that the image update logic runs **only** when a new image is uploaded.
+Sure! Here's the completed and accurate summary including what we’ve just done:
 
 ---
 
 ### **Final Summary**
 
-✅ Updated `edit.ejs` to include a file input and `multipart/form-data`.  
+✅ Updated `edit.ejs` to include a file input and `enctype="multipart/form-data"` for image uploads.  
 ✅ Modified the `PUT` route in `routes/listing.js` to accept image uploads.  
-✅ Updated `updateListing` in `controllers/listings.js` to replace the old image only if a new one is uploaded.  
-✅ Handled edge cases to avoid errors when no new image is provided.
+✅ Updated `updateListing` in `controllers/listings.js`:
+
+- Deletes the old image from Cloudinary if a new one is uploaded.
+- Uploads the new image using buffer-to-base64 conversion (consistent with the create function).
+- Only updates the image field if a new file is provided.
+- Retains existing image if no new image is uploaded.
