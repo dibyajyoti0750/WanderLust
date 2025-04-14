@@ -116,8 +116,7 @@ We can either generate new sample data or modify the existing data:
 Then, reinitialize the database:
 
 ```sh
-cd init/
-node index.js
+node init/index.js
 ```
 
 Once we restart the server and refresh our platform, all images from the old dataset will disappear. This is because our views (`index.ejs` and `show.ejs`) are still expecting a simple image string.
@@ -144,7 +143,5 @@ Now, if we create a **new listing with an uploaded image**, the image should app
 1. **Modified the schema** to store an image object (`url` and `filename`).
 2. **Updated the listing creation route** to process uploaded images.
 3. **Changed the controller** to save both image URL and filename.
-4. **Reordered middleware** to avoid Joi validation errors.
-5. **Verified the changes** by checking MongoDB.
-6. **Reinitialized the database** with new image data format.
-7. **Updated EJS templates** to use `listing.image.url` instead of a simple string.
+4. **Reinitialized the database** with new image data format.
+5. **Updated EJS templates** to use `listing.image.url` instead of a simple string.
