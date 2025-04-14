@@ -90,14 +90,6 @@ module.exports.updateListing = async (req, res) => {
 
 ---
 
-Sure! Here's the completed and accurate summary including what we’ve just done:
-
----
-
-Sure! Here's the completed and accurate summary including what we’ve just done:
-
----
-
 ### **Final Summary**
 
 ✅ Updated `edit.ejs` to include a file input and `enctype="multipart/form-data"` for image uploads.  
