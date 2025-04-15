@@ -2,13 +2,9 @@
 
 The next feature we are working on is adding an image preview for the edit page.
 
-This will be displayed before the "Upload New Image" div, allowing users to decide whether they want to update the original listing image or not.
-
----
-
 ### **Approach to Implementing the Image Preview**
 
-There are multiple ways to achieve this. The simplest and most basic approach is to modify our `edit.ejs` file. In this file, where we have the image input field (file upload section), we will create a new `div` element right before it. Inside this `div`, we will use an `<img>` tag to display the original image of the listing.
+In our `edit.ejs` file, where we have the image input field, we will create a new `div` element right before it. Inside this `div`, we will use an `<img>` tag to display the original image of the listing.
 
 #### **Adding an Image Tag in `edit.ejs`**
 
@@ -43,8 +39,6 @@ To solve this, we need a way to display a **smaller preview version** of the ima
 Instead of manually compressing images, we can take advantage of **Cloudinary’s Image Transformation features**. Cloudinary provides various parameters that allow us to manipulate images dynamically.
 
 [Cloudinary Image Transformations](https://cloudinary.com/documentation/image_transformations)
-
-For our specific case, we want to reduce the **image resolution** so that only a small preview is shown on the edit page.
 
 ---
 
