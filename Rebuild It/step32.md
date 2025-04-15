@@ -132,34 +132,6 @@ console.log(mapToken);
 mapboxgl.accessToken = mapToken;
 
 const map = new mapboxgl.Map({
-  container: "map", // container ID
-  style: "mapbox://styles/mapbox/streets-v12", // style URL
-  center: [88.3629, 22.5744], // starting position [lng, lat]
-  zoom: 9, // starting zoom level
-});
-```
-
-However, we **cannot directly access environment variables inside `public/js/map.js`** because **public JS files do not have access to `process.env` variables**.
-
----
-
-## **Fixing the Environment Variable Issue**
-
-Since public JS files do not have direct access to `process.env`, we define the **map token inside `show.ejs`** before loading `map.js`:
-
-```html
-<% layout("/layouts/boilerplate") %>
-<script>
-  const mapToken = "<%= process.env.MAP_TOKEN %>";
-</script>
-```
-
-Now, modify `map.js` to use this global variable instead:
-
-```js
-mapboxgl.accessToken = mapToken;
-
-const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v12",
   center: [88.3629, 22.5744],
@@ -167,13 +139,44 @@ const map = new mapboxgl.Map({
 });
 ```
 
-In `show.ejs`, include the `map.js` script **at the bottom**:
+However, we **can't directly access environment variables in frontend files like `public/js/map.js`**, because those files run in the browser and process.env is only available on the server side.
 
-```html
-<script src="/js/map.js"></script>
+---
+
+## **Fixing the Environment Variable Issue**
+
+**1. Pass the token to your EJS view from the controller**:
+
+```js
+res.render("wallpapers/show.ejs", {
+  wallpaper,
+  mapToken: process.env.MAP_TOKEN,
+});
 ```
 
-Since `show.ejs` loads first, `mapToken` is available when `map.js` executes.
+**2. Embed the token in a script tag inside `show.ejs` before loading `map.js`**:
+
+```html
+<% layout("/layouts/boilerplate") %>
+
+<script>
+  window.mapToken = "<%= mapToken %>";
+</script>
+```
+
+This sets a global variable `window.mapToken` that our frontend JS can read.
+
+**3. Update `public/js/map.js` to use that token**:
+
+```js
+mapboxgl.accessToken = window.mapToken;
+```
+
+**4. Now, include the `map.js` script at the bottom of `show.ejs`**:
+
+```js
+<script src="/js/map.js"></script>
+```
 
 ---
 
