@@ -183,5 +183,3 @@ mapboxgl.accessToken = window.mapToken;
 ## **Next Steps**
 
 Currently, our map always centers at **Kolkata** (`[88.3629, 22.5744]`). However, we need the map to **center based on the listing’s stored location**. That is what we will work on next.
-
----
