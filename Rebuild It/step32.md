@@ -6,22 +6,18 @@
 2. Copy your **default public token**.
 3. Save the token in your **.env** file.
 
-### **Choosing a Map Style**
-
-Mapbox provides various map styles, one of which is the **"streets"** style. We will use this style for our project.
-
 ### **Using Mapbox GL JS**
 
 To display a map, we will refer to the **Mapbox documentation**:  
-🔗 [Mapbox Docs](https://docs.mapbox.com/)
+[Mapbox Docs](https://docs.mapbox.com/)
 
-Specifically, we will use **Mapbox GL JS**, a JavaScript library for rendering interactive maps.
+Specifically, we will use the **Mapbox GL JS** library.
 
 Mapbox provides multiple examples:  
-🔗 [Mapbox GL JS Examples](https://docs.mapbox.com/mapbox-gl-js/example/)
+[Mapbox GL JS Examples](https://docs.mapbox.com/mapbox-gl-js/example/)
 
-The most basic functionality we need is **Display a map on a webpage**:  
-🔗 [Simple Map Example](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
+The most basic functionality we need is **Displaying a map on a webpage**:  
+[Simple Map Example](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
 
 We'll follow this example to display our first map inside our `show.ejs` file.
 
