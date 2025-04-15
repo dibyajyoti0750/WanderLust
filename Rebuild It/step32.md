@@ -110,8 +110,11 @@ In `public/css/styles.css`, add the following CSS:
 ```css
 /* Map */
 #map {
-  height: 400px;
-  width: 80vh;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 8px;
 }
 ```
 
