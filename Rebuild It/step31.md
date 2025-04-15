@@ -77,7 +77,7 @@ The `/upload/` part of the URL is where we insert transformation parameters.
 We will **replace** `/upload/` with `/upload/w_250` to reduce the image size and pass it to our `edit.ejs` template:
 
 ```js
-originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250");
+originalImageUrl = originalImageUrl.replace("/upload/", "/upload/w_250/");
 res.render("listings/edit.ejs", { listing, originalImageUrl });
 ```
 
@@ -89,7 +89,7 @@ Now, instead of using `listing.image.url`, we will use `originalImageUrl` in `ed
 
 ```html
 <div class="mb-3">
-  Original Listing Image <br />
+  <label class="form-label">Original Listing Image</label><br />
   <img src="<%= originalImageUrl %>" />
 </div>
 ```
@@ -106,13 +106,3 @@ Now, instead of using `listing.image.url`, we will use `originalImageUrl` in `ed
    - Modify `controllers/listings.js` to generate a low-resolution image URL.
    - Pass the modified URL to `edit.ejs`.
    - Use `originalImageUrl` in `edit.ejs` to display the optimized preview.
-
----
-
-### **Conclusion**
-
-With this implementation:
-
-- The edit page now shows a preview of the original listing image.
-- The preview image is optimized and loads faster.
-- The original image remains unchanged, and users can still upload a new one if needed.
