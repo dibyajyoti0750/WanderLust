@@ -15,13 +15,12 @@ Mapbox provides various map styles, one of which is the **"streets"** style. We 
 To display a map, we will refer to the **Mapbox documentation**:  
 🔗 [Mapbox Docs](https://docs.mapbox.com/)
 
-Specifically, we will use **Mapbox GL JS**, a JavaScript library for rendering interactive maps:  
-🔗 [Mapbox GL JS Guide](https://docs.mapbox.com/mapbox-gl-js/guides/)
+Specifically, we will use **Mapbox GL JS**, a JavaScript library for rendering interactive maps.
 
 Mapbox provides multiple examples:  
 🔗 [Mapbox GL JS Examples](https://docs.mapbox.com/mapbox-gl-js/example/)
 
-The most basic functionality we need is displaying a **map on a webpage**:  
+The most basic functionality we need is **Display a map on a webpage**:  
 🔗 [Simple Map Example](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
 
 We'll follow this example to display our first map inside our `show.ejs` file.
@@ -36,10 +35,10 @@ We need to add **two additional links** in our `boilerplate.ejs` file inside the
 
 ```html
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css"
+      href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
   </head>
 ```
 
@@ -79,10 +78,9 @@ If there are no reviews, we don’t need to display "All Reviews." To handle thi
 
 Also, modify the `<hr>` tag logic:
 
-```ejs
-<div class="col-8 offset-3 mb-3">
-  <% if(currUser) { %>
-  <hr />
+```html
+<% if(currUser) { %>
+<hr />
 ```
 
 ---
