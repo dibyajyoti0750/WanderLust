@@ -2,16 +2,16 @@
 
 ## **Objective**
 
-We aim to implement a small functionality where, whenever we add a new listing and enter a location, geocoding will convert the location into geographical coordinates (latitude and longitude) and print them. Once we achieve this, we will display these coordinates on a map.
+We aim to implement a small functionality where, whenever we add a new listing and enter a location, geocoding will convert the location into geographical coordinates (latitude and longitude) and print them. Once we achieve this, we will display these coordinates on the map.
 
 To accomplish this, we will use the **Mapbox Geocoding API**:  
-🔗 [Mapbox Geocoding API Documentation](https://docs.mapbox.com/api/search/geocoding/)
+[Mapbox Geocoding API Documentation](https://docs.mapbox.com/api/search/geocoding/)
 
 ## **Understanding Geocoding**
 
 Geocoding is of two types:
 
-1. **Forward Geocoding** – Converts a place name (e.g., "New Delhi, India") into coordinates.
+1. **Forward Geocoding** – Converts a place name into coordinates.
 2. **Reverse Geocoding** – Converts coordinates into a human-readable address.
 
 Since we need to obtain coordinates from a location name, we will use **Forward Geocoding**.
@@ -109,9 +109,6 @@ module.exports.createListing = async (req, res, next) => {
 };
 ```
 
-- **`query`** – The location we want to geocode.
-- **`limit: 1`** – Ensures only one set of coordinates is returned.
-
 ---
 
 ## **Testing the API**
@@ -131,8 +128,6 @@ console.log(response.body.features[0]);
 And since we limited results to **1**, we get a single object.
 
 ### **Step 3: Extract Only the Coordinates**
-
-Inside the `geometry` field, we have:
 
 To print only the coordinates:
 
@@ -166,6 +161,6 @@ Now, whenever a user enters a location in the **new listing form**, our backend 
 
 ## **Next Steps**
 
-- Now that we have the **coordinates**, the next step is to **display them on a map**.
+Now that we have the **coordinates**, the next step is to **display them on a map**.
 
 ---
