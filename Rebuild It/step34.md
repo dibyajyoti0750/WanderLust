@@ -1,7 +1,6 @@
 ### **Storing Coordinates**
 
-Before using coordinates, we need to store them in the database (DB). The first question that might come to mind is:  
-**How do we save location coordinates in the database?**
+Before using coordinates, we need to store them in the database. The first question that might come to mind is: **How do we save location coordinates in the database?**
 
 If we look at our listing model, we can create a new object inside it to store coordinates. This object will be an **array of numbers**, where two values will be stored—**longitude and latitude**. Additionally, we will set the `required` property to `true`, ensuring that these values are always stored.
 
@@ -134,4 +133,4 @@ After adding the listing, our database will store the following information:
 
 #### **Next Steps**
 
-In the next steps, we will use these **coordinates** to display **custom locations on a map** in our application.
+In the next steps, we will use these **coordinates** to display **custom locations on the map** in our application.
