@@ -3,7 +3,7 @@
 Now, we will display a custom location on our map using a **marker**. A map marker is used to pinpoint a particular location and represent it with a marker-like icon.
 
 We want that whenever a location is added inside a listing, a marker should appear at that location, visually representing it. To achieve this, we will follow the official Mapbox documentation:  
-🔗 [Mapbox Add a Marker Example](https://docs.mapbox.com/mapbox-gl-js/example/add-a-marker/)
+[Mapbox Add a Marker Example](https://docs.mapbox.com/mapbox-gl-js/example/add-a-marker/)
 
 ### **Step 1: Copy the Marker Code**
 
@@ -25,17 +25,15 @@ In `show.ejs`, we will create a new variable called `coordinates` and assign it 
 
 ```html
 <script>
-  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  window.mapToken = "<%= mapToken %>";
   const coordinates = <%= listing.geometry.coordinates %>;
 </script>
 ```
 
 However, if we try to access this variable directly, we will get an error. To fix this, we use the **JSON.stringify()** method to ensure the data is properly formatted:
 
-```html
-<script>
-  const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
-</script>
+```js
+const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
 ```
 
 ### **Step 3: Debugging the Coordinates**
@@ -45,7 +43,6 @@ Before creating the marker, we log the coordinates in `map.js` to check if they 
 ```js
 console.log(coordinates);
 
-// Marker creation (commented for debugging)
 // const marker = new mapboxgl.Marker()
 //   .setLngLat([12.554729, 55.70651])
 //   .addTo(map);
