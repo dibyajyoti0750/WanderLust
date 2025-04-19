@@ -2,8 +2,7 @@
 
 Now, we will display a custom location on our map using a **marker**. A map marker is used to pinpoint a particular location and represent it with a marker-like icon.
 
-We want that whenever a location is added inside a listing, a marker should appear at that location, visually representing it. To achieve this, we will follow the official Mapbox documentation:  
-[Mapbox Add a Marker Example](https://docs.mapbox.com/mapbox-gl-js/example/add-a-marker/)
+We want that whenever a location is added inside a listing, a marker should appear at that location, visually representing it. To achieve this, we will follow the official Mapbox documentation: [Mapbox Add a Marker Example](https://docs.mapbox.com/mapbox-gl-js/example/add-a-marker/)
 
 ### **Step 1: Copy the Marker Code**
 
