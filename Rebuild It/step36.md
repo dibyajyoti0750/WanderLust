@@ -71,7 +71,7 @@ We can modify the popup content to display meaningful information:
 
 Instead of hardcoding text, we dynamically insert listing information.
 
-1️⃣ **In `show.ejs`, save the listing data inside a script tag:**
+**1. In `show.ejs`, save the listing data inside a script tag:**
 
 ```html
 <script>
@@ -82,19 +82,19 @@ Instead of hardcoding text, we dynamically insert listing information.
 
 📌 This makes `listing` data available for JavaScript.
 
-2️⃣ **In `map.js`, use the listing coordinates for centering the map:**
+**2. In `map.js`, use the listing coordinates for centering the map:**
 
 ```js
 center: listing.geometry.coordinates,
 ```
 
-3️⃣ **Set the marker’s location dynamically:**
+**3. Set the marker’s location dynamically:**
 
 ```js
 .setLngLat(listing.geometry.coordinates)
 ```
 
-4️⃣ **Use listing location inside the popup:**
+**4. Use listing location inside the popup:**
 
 ```js
 .setPopup(
