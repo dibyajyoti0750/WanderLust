@@ -63,9 +63,7 @@ After refreshing, we should now see a **blue-colored default marker** appear on 
 
 ### **Step 5: Centering the Map on the Marker**
 
-By default, the center of our map is **Kolkata** because we haven't changed the initial coordinates. This means old listings will not show a centered marker.
-
-To fix this, we update the `center` property in `map.js` to use the **actual coordinates of the listing**:
+By default, the center of our map is **Kolkata**, to fix this, we update the `center` property in `map.js` to use the **actual coordinates of the listing**:
 
 ```js
 center: coordinates,
@@ -77,14 +75,7 @@ We can now add a **new listing** and test if the marker is appearing correctly.
 
 ### **Step 6: Customizing the Marker**
 
-The default marker has several customizable properties. We can explore them in the API reference:  
-🔗 [Mapbox Marker API](https://docs.mapbox.com/mapbox-gl-js/api/markers/)
-
-Some available options include:
-
-- **Anchor position**
-- **Color customization**
-- **Draggable property**
+The default marker has several customizable properties. We can explore them in the API reference: [Mapbox Marker API](https://docs.mapbox.com/mapbox-gl-js/api/markers/)
 
 To change the marker color, we modify the `Marker` class by passing a configuration object:
 
