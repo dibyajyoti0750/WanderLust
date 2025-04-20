@@ -15,7 +15,6 @@ We are implementing a **Marker Popup** in Mapbox, similar to how Airbnb displays
 
 ### **Step 2: Using the Mapbox Popup Component**
 
-The official documentation is available here:  
 🔗 [Mapbox Popup API](https://docs.mapbox.com/mapbox-gl-js/api/markers/#popup)  
 🔗 [Popup Example](https://docs.mapbox.com/mapbox-gl-js/api/markers/#popup-example)
 
@@ -69,26 +68,22 @@ Instead of hardcoding text, we dynamically insert listing information.
 
 ```html
 <script>
-  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  window.mapToken = "<%= mapToken %>";
   const listing = <%- JSON.stringify(listing) %>;
 </script>
 ```
 
 📌 This makes `listing` data available for JavaScript.
 
-**2. In `map.js`, use the listing coordinates for centering the map:**
+**2. In `map.js`, use the listing coordinates for centering the map & setting the marker’s location:**
 
 ```js
 center: listing.geometry.coordinates,
-```
 
-**3. Set the marker’s location dynamically:**
-
-```js
 .setLngLat(listing.geometry.coordinates)
 ```
 
-**4. Use listing location inside the popup:**
+**3. Use listing location inside the popup:**
 
 ```js
 .setPopup(
@@ -102,8 +97,6 @@ center: listing.geometry.coordinates,
 
 ### **Step 5: Displaying Listing Title Instead of Location**
 
-If you want the popup to show the listing's **title** instead of its location:
-
 ```js
 .setPopup(
   new mapboxgl.Popup({ offset: 25 }).setHTML(
@@ -116,6 +109,6 @@ If you want the popup to show the listing's **title** instead of its location:
 
 ### **Final Thoughts**
 
-- Now, when clicking a marker, a popup appears displaying either the **location** or **title**.
+- Now, when clicking the marker, a popup appears displaying either the **location** or **title**.
 - You can **customize** the popup further with CSS and additional information.
 - Challenge yourself by **replacing the marker with a custom icon** instead of the default one.
