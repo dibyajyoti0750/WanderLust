@@ -1,6 +1,6 @@
 ### **Overview**
 
-We are implementing a **Marker Popup** in Mapbox, similar to how Airbnb displays a map with markers for property locations. When a user hovers over or clicks on a marker, a popup should appear displaying information about that location.
+We are implementing a **Marker Popup** in Mapbox, similar to how Airbnb displays a map with markers for property locations. When a user hovers over or clicks on the marker, a popup should appear displaying information about that location.
 
 ---
 
@@ -9,13 +9,7 @@ We are implementing a **Marker Popup** in Mapbox, similar to how Airbnb displays
 - A **marker** is a visual representation of a location on the map.
 - A **popup** is a small window that appears when a marker is clicked, displaying additional information.
 
-#### **Example from Airbnb**
-
-- On Airbnb's website, a map displays markers where properties are listed.
-- Instead of a generic marker, an **icon** can be used.
-- When a marker is clicked, a popup appears with details.
-
-📌 **Challenge:** Try replacing the marker with an icon instead of a default marker.
+📌 **Challenge:** Try replacing the marker with an icon instead of the default marker.
 
 ---
 
