@@ -86,8 +86,6 @@ Each filter consists of an icon and a name:
 To start, we will add two filters:
 
 ```html
-<style></style>
-
 <div id="filters">
   <div class="filter">
     <div><i class="fas fa-fire"></i></div>
@@ -107,42 +105,38 @@ To start, we will add two filters:
 
 #### **Aligning Filters in a Row**
 
-- Apply `display: flex` to align filters in a row and allow wrapping if needed:
-  ```css
-  #filters {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  ```
+```css
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+```
 
 #### **Centering Content and Adding Spacing**
 
-- Center align the filters and add margins:
-  ```css
-  .filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-  }
-  ```
+```css
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+```
 
 #### **Adding a Hover Effect Like Airbnb**
 
-- By default, filters will have reduced opacity, and on hover, they will appear darker:
+```css
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+}
 
-  ```css
-  .filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-  }
-
-  .filter:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  ```
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+```
 
 ---
 
@@ -199,12 +193,11 @@ You can add multiple filters in the same format:
 
 #### **Reducing Font Size of Filter Labels**
 
-- Decrease text size for filter names to make them more compact:
-  ```css
-  .filter p {
-    font-size: 0.8rem;
-  }
-  ```
+```css
+.filter p {
+  font-size: 0.8rem;
+}
+```
 
 ---
 
