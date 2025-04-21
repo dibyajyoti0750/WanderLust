@@ -226,5 +226,3 @@ Alright, so for now, when we click on these filters, nothing actually happens. H
 - This will be a great learning experience, reinforcing all the **concepts** we have covered.
 - You won’t be learning anything new here, but rather **applying** your existing knowledge.
 - The **frontend for filters is already built**—you only need to **implement the backend**.
-
-This will deepen your **understanding** and improve your **problem-solving skills**. Try building it yourself!
