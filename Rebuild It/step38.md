@@ -2,8 +2,7 @@
 
 Now, we are going to add a tax-related switch to our page. This will be a simple on-off toggle button that will cause some changes on our index page.
 
-To create this switch, we can use an existing Bootstrap component called the **switch element**. You can check it out here:  
-🔗 [Bootstrap Switches](https://getbootstrap.com/docs/5.3/forms/checks-radios/#switches)
+To create this switch, we can use an existing Bootstrap component called the **switch element**. You can check it out here: [Bootstrap Switches](https://getbootstrap.com/docs/5.3/forms/checks-radios/#switches)
 
 There are multiple switch options available. We will copy the first one and add it inside the `#filters` div by creating a new `div` for it. The updated HTML structure will be:
 
@@ -79,8 +78,7 @@ This will be your **homework** to implement.
 
 ### **Displaying Tax Information on Toggle**
 
-Now, we want an additional line to appear next to the price whenever the switch is turned on. This line should display:  
-✅ **+18% GST**
+Now, we want an additional line to appear next to the price whenever the switch is turned on. This line should display: **+18% GST**
 
 To do this, we modify the code inside our **card**, where we display the price:
 
@@ -147,10 +145,6 @@ for (let info of taxInfo) {
 
 ### **Improving Styling**
 
-The toggling effect works, but we need to improve its styling.
-
-We start by adding a **border** around the tax switch. We define styles for the `tax-toggle` class:
-
 ```css
 .tax-toggle {
   border: 1px solid black;
@@ -163,7 +157,7 @@ We start by adding a **border** around the tax switch. We define styles for the 
 }
 ```
 
-Now, we want to **vertically center** the switch within the filters section. The parent div (`#filters`) is already a flex container, so we simply update its styles:
+Now, we want to **vertically center** the switch within the filters section:
 
 ```css
 #filters {
@@ -172,10 +166,6 @@ Now, we want to **vertically center** the switch within the filters section. The
   align-items: center;
 }
 ```
-
----
-
-Here's a detailed and structured cheat sheet of what we've done so far, translated into English, without skipping any details:
 
 ---
 
