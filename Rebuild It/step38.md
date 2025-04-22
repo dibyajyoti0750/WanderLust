@@ -184,8 +184,6 @@ Bootstrap provides several built-in components for adding a search box within a 
 
 #### **Modifying `navbar.ejs`**
 
-We will add a new `<div>` in the navbar for our search option. Here’s how we structure it:
-
 ```html
 <a class="nav-link" href="/listings">Explore</a>
 </div>
@@ -204,8 +202,6 @@ We will add a new `<div>` in the navbar for our search option. Here’s how we s
 ```
 
 ### **Customizing the Search Button**
-
-We want to modify the default button to match our website’s theme. First, we replace the default Bootstrap button with a custom-styled button:
 
 ```html
 <button class="btn search-btn" type="submit">Search</button>
@@ -231,8 +227,6 @@ Now, we define the styling for our **search button** using a `<style>` tag:
 
 ### **Adding an Icon to the Search Button**
 
-To enhance the button visually, we include a **search icon** (`fa-magnifying-glass` from Font Awesome):
-
 ```html
 <button class="btn search-btn" type="submit">
   <i class="fa-solid fa-magnifying-glass"></i> Search
@@ -240,8 +234,6 @@ To enhance the button visually, we include a **search icon** (`fa-magnifying-gla
 ```
 
 ### **Improving Button Alignment & Shape**
-
-To ensure the **icon and text stay aligned** and to give the button an **oval shape**, we modify our styles further:
 
 ```css
 .search-btn {
@@ -259,8 +251,6 @@ To ensure the **icon and text stay aligned** and to give the button an **oval sh
 
 ### **Customizing the Search Input Field**
 
-We also need to refine our **search input field** to match our design:
-
 ```html
 <input
   class="form-control me-2 search-inp"
@@ -270,8 +260,6 @@ We also need to refine our **search input field** to match our design:
 ```
 
 #### **Styling the Search Input**
-
-We give the input field **rounded edges, proper padding, and a readable font size**:
 
 ```css
 .search-inp {
