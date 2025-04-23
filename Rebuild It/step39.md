@@ -40,8 +40,6 @@ const dbUrl = process.env.ATLASDB_URL;
 
 We need to modify the existing **async function** to connect to Atlas instead of the local database:
 
-**Updated Code:**
-
 ```javascript
 async function main() {
   await mongoose.connect(dbUrl);
@@ -54,9 +52,7 @@ Now, Mongoose will establish a connection with the **cloud database on MongoDB A
 
 ### **6. Starting the Server & Checking the Database**
 
-After starting the server, if we navigate to the `/listings` route, we will see that **nothing is displayed**!
-
-#### **Why is the Database Empty?**
+After starting the server, if we navigate to the `/listings` route, we will see that **nothing is displayed**! Because:
 
 1. Previously, our database was stored **locally**.
 2. Now, we are connected to **MongoDB Atlas**, which is currently **empty**.
@@ -110,10 +106,6 @@ At this point, MongoDB Atlas is **fully connected**, and everything works as exp
 ✅ **Data is stored in the cloud database**.  
 ✅ **Users, listings, and reviews sync properly**.  
 ✅ **The application is smoothly interacting with the cloud database**.
-
----
-
-Here's a structured cheat sheet of everything we've covered so far, translated into English without skipping any details, including all the necessary code:
 
 ---
 
