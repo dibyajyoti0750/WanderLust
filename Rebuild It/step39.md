@@ -127,7 +127,7 @@ At this point, MongoDB Atlas is **fully connected**, and everything works as exp
 
 - Express-session provides **multiple storage options**:
   - [List of compatible session stores](https://www.npmjs.com/package/express-session#compatible-session-stores)
-- Since we are already using **MongoDB** as our primary database in the MERN stack, we will use **connect-mongo** for session storage.
+- Since we are already using **MongoDB** as our primary database, we will use **connect-mongo** for session storage.
 
 #### **What is connect-mongo?**
 
@@ -141,7 +141,7 @@ At this point, MongoDB Atlas is **fully connected**, and everything works as exp
 ### **1. Install `connect-mongo`**
 
 ```sh
-npm i connect-mongo
+npm install connect-mongo
 ```
 
 ### **2. Import Required Modules**
@@ -188,7 +188,7 @@ store.on("error", (err) => {
 });
 ```
 
-- This ensures that any errors in the session store are logged for debugging.
+This ensures that any errors in the session store are logged for debugging.
 
 ### **5. Configure express-session to Use Mongo Store**
 
@@ -207,10 +207,7 @@ const sessionOptions = {
 
 ## **How to Verify if Sessions Are Stored?**
 
-1. Start the server:
-   ```sh
-   nodemon app.js
-   ```
+1. Start the server.
 2. Log in as a user.
 3. Check **MongoDB Atlas** → **Collections** → Find a new `sessions` collection.
 4. If a new user signs up and creates a listing, the session information will be updated.
