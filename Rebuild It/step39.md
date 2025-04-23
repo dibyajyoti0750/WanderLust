@@ -18,10 +18,8 @@ To connect our local project with this online database:
 
 Instead of writing the connection string directly in the code, we store it in a **.env file** for security purposes.
 
-`.env` file:
-
 ```plaintext
-ATLASDB_URL=mongodb+srv://dibyajyotipramanick0750:efutfke18LhPmvLS@cluster0.x1ec5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ATLASDB_URL=mongodb+srv://dibyajyotipramanick0750:OAtR75on0RL47uxE@cluster0.x1ec5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 #### **4. Updating `app.js` to Use MongoDB Atlas**
