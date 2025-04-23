@@ -24,7 +24,7 @@ Before deploying, we need to convert our **WanderLust** project folder into a **
 
 ### **Managing Secrets Securely**
 
-We are using a **secret** in `sessionOptions` and `Mongo store`, which should not be hardcoded in the code. Instead, we will store it in an `.env` file:
+We are using a **secret** in `sessionOptions` and `MongoStore`, which should not be hardcoded in the code. Instead, we will store it in an `.env` file:
 
 ```ini
 SECRET=b269f46aacdcfb2889505fc17d7d89c6
@@ -75,8 +75,6 @@ node_modules/
 ```
 
 ### **Step 3: Commit and Push Code to GitHub**
-
-Run the following commands:
 
 ```sh
 git add .

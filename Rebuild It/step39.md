@@ -18,7 +18,7 @@ To connect our local project with this online database:
 
 Instead of writing the connection string directly in the code, we store it in a **.env file** for security purposes.
 
-```plaintext
+```ini
 ATLASDB_URL=mongodb+srv://dibyajyotipramanick0750:OAtR75on0RL47uxE@cluster0.x1ec5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
